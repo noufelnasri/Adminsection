@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+    <script src="https://kit.fontawesome.com/122c77fce3.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="login-container">
+
+    <!-- Form with id="login-form" for easier reference in JavaScript -->
+    <form action="" class="loginform" id="login-form">
+        <div class="logo">
+            <img src="images/logo-icon.png" alt="">
+            <img src="images/logo-text.png" alt="">
+        </div>
+
+        <!-- Username and password input fields -->
+        <div class="input-boxes">
+            <div class="line-input">
+                <i class="fa-regular fa-user" id="username-pass"></i>
+                <input type="text" placeholder="Username">
+            </div>
+            <div class="line-input">
+                <i class="fa-solid fa-pen" id="pen"></i>
+                <input type="password" placeholder="Password">
+            </div>
+        </div>
+
+        <!-- Login and Lost Password buttons -->
+    
+    </form>
+    <div class="lost-and-login">
+        <button type="button" class="lost" id="lost-pass">
+            <i class="fa-solid fa-lock"></i>
+            <span>Lost password?</span>
+        </button>
+        <button type="submit" class="login" id="log-in">Login</button>
+    </div>
+</div>
+
+<script>
+    // Selecting the login form and the lost password button
+    let loginForm = document.getElementById("login-form");
+    let lostPassButton = document.getElementById("lost-pass");
+
+    // Event listener for the "Lost password?" button click
+    lostPassButton.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevents any default button behavior
+        
+       
+        loginForm.innerHTML = `
+            <div class="logo">
+                <img src="images/logo-icon.png" alt="">
+                <img src="images/logo-text.png" alt="">
+            </div>
+
+            <div class="email-recovery">
+                <h5 class="h-email">Enter your email address below, and we will send you instructions <br> <span class="h5-span"> on how to recover your password.</span></h5>
+                <div class="line-input">
+                    <i class="fa-regular fa-envelope" id="envelop"></i>
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+            </div>
+        `;
+
+        document.getElementById("log-in").textContent = "recover" ;
+        document.getElementById("lost-pass").textContent = "back to login" ;
+        document.getElementById("lost-pass").addEventListener("click", ()=>{
+            window.location.href ="login.html";  
+        }) 
+
+
+
+    });
+</script>
+
+</body>
+</html>

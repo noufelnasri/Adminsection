@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Error 403</title>
+</head>
+<body>
+
+
+    <div class="error">
+        <h2 id="error-title">403</h2>
+
+        <span>page not found !</span>
+
+        <p>you seem to be trying to find how way home</p>
+
+
+        <a href="dashbord.html"><button>back to home</button></a>
+    </div>
+    
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const errortitle = document.getElementById("error-title");
+    const errorCode = sessionStorage.getItem("errorCode");
+    if (errorCode && errortitle) {
+        errortitle.textContent = errorCode;
+        sessionStorage.removeItem("errorCode");  // Optional: Clear after use
+    }
+});
+
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
