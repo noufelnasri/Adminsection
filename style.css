@@ -1690,6 +1690,7 @@ buttons page
     background-color: var(--white-color);
     padding: 15px;
     gap: 12px;
+    width:100%;
     margin-top: 20px;
 }
 .buttons-container .btns-small button:nth-child(1){
